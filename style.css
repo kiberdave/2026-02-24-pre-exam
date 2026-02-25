@@ -23,6 +23,33 @@ body {
   max-width: 1240px;
   margin: 0 auto;
   font-family: "Poppins", sans-serif;
+  color: #000;
+  background-color: #fff;
+  transition: all 0.3s ease;
+}
+
+body:has(#dark:checked) {
+  background-color: #1e2a39;
+  color: #fff;
+}
+body:has(#dark:checked) .intro-path {
+  color: #fff;
+}
+
+body:has(#light:checked) label[for=light] {
+  display: none;
+}
+
+body:has(#dark:checked) label[for=dark] {
+  display: none;
+}
+
+input[name=theme] {
+  display: none;
+}
+
+label {
+  cursor: pointer;
 }
 
 header, main, footer {
@@ -121,6 +148,7 @@ header {
   box-shadow: 2px -2px 38px rgba(0, 0, 0, 0.0784313725);
   margin-left: 24px;
   text-align: center;
+  background-color: #fff;
 }
 .hero-left .lrnmore-btn {
   font-weight: 600;
