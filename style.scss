@@ -2,7 +2,13 @@ $main-font: "Poppins", sans-serif;
 $paragraph-font-size: 16px;
 $paragraph-font-weight: 400;
 $main-color: #052A44;
-$lt-button-font-color: #fff;
+
+
+$bg-light: #fff;
+$text-light: #000;
+
+$bg-dark: #1e2a39;
+$text-dark: #fff;
 
 @mixin description {
     font-family: $main-font;
@@ -12,7 +18,7 @@ $lt-button-font-color: #fff;
 
 @mixin primary-button {
     font-family: $main-font;
-    color: $lt-button-font-color;
+    color: $text-dark;
     font-size: $paragraph-font-size;
     font-weight: 600;
     border-radius: 8px;
@@ -48,7 +54,41 @@ body {
   max-width: 1240px;
   margin: 0 auto;
   font-family: $main-font;
+  color: $text-light;
+  background-color: $bg-light;
+  transition: all 0.3s ease;
 }
+
+
+// theme switching start
+
+body:has(#dark:checked) {
+  background-color: $bg-dark; 
+  color: $text-dark;
+  
+  .intro-path {
+    color: $text-dark;
+  }
+  
+}
+
+body:has(#light:checked) label[for="light"] {
+  display: none;
+}
+
+body:has(#dark:checked) label[for="dark"] {
+  display: none;
+}
+
+input[name="theme"] {
+    display: none;
+}
+
+label {
+    cursor: pointer;
+}
+
+// theme switchin end
 
 header, main, footer {
   padding: 0 24px;
@@ -127,7 +167,7 @@ header {
 
         & .intro-path {
             @extend .intro-career;
-            color: #000;
+            color: $text-light;
             padding-left: 5px;
         }
 
@@ -150,6 +190,7 @@ header {
             box-shadow: 2px -2px 38px #00000014;
             margin-left: 24px;
             text-align: center;
+            background-color: #fff;
         }
 
         & .lrnmore-btn {
