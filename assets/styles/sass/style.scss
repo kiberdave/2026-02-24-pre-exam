@@ -1,0 +1,51 @@
+@use "abstracts/variables";
+@use "abstracts/mixins";
+@use "layouts/reset";
+@use "layouts/header";
+@use "layouts/heroSection";
+
+body {
+    max-width: 1240px;
+    margin: 0 auto;
+    font-family: variables.$main-font;
+    color: variables.$text-light;
+    background-color: variables.$bg-light;
+    transition: all 0.3s ease;
+}
+
+
+// theme switching start
+
+body:has(#dark:checked) {
+    background-color: variables.$bg-dark;
+    color: variables.$text-dark;
+
+    .intro-path {
+        color: variables.$text-dark;
+    }
+
+}
+
+body:has(#light:checked) label[for="light"] {
+    display: none;
+}
+
+body:has(#dark:checked) label[for="dark"] {
+    display: none;
+}
+
+input[name="theme"] {
+    display: none;
+}
+
+label {
+    cursor: pointer;
+}
+
+// theme switchin end
+
+header,
+main,
+footer {
+    padding: 0 24px;
+}

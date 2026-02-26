@@ -1,0 +1,144 @@
+@use "../abstracts/mixins";
+@use "../abstracts/variables";
+
+#hero {
+    display: flex;
+    height: 538px;
+
+    .hero-left {
+        display: flex;
+        width: 50%;
+        flex-direction: column;
+        justify-content: center;
+
+        & .intro-career {
+            font-size: 48px;
+            color: #E8DB84;
+            font-weight: 700;
+        }
+
+        & .intro-path {
+            @extend .intro-career;
+            color: variables.$text-light;
+            padding-left: 5px;
+        }
+
+        & p {
+            @include mixins.description;
+            font-size: 18px;
+            max-width: 579px;
+            padding-bottom: 24px;
+        }
+
+        & .start {
+            @include mixins.primary-button;
+        }
+
+        & .arrow {
+            width: 53px;
+            height: 53px;
+            border-radius: 50%;
+            font-size: 20px;
+            box-shadow: 2px -2px 38px #00000014;
+            margin-left: 24px;
+            text-align: center;
+            background-color: #fff;
+        }
+
+        & .lrnmore-btn {
+            font-weight: 600;
+            margin-left: 12px;
+        }
+
+        & .hero-students {
+            display: flex;
+            padding-top: 24px;
+            align-items: center;
+
+            &-img {
+                height: 52px;
+            }
+
+            &-txt {
+                font-size: 13.09px;
+                font-weight: 500;
+                text-transform: capitalize;
+                padding-left: 12px;
+            }
+        }
+
+
+    }
+
+    .hero-right {
+        display: flex;
+        width: 50%;
+        position: relative;
+        align-items: center;
+        justify-content: right;
+
+        &-stats {
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            z-index: 20;
+            left: 15px;
+            gap: 12px;
+
+            &-card {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: space-between;
+                padding: 17px 0px;
+                width: 143px;
+                height: 106px;
+                background-color: #fff;
+                border-radius: 14px;
+                box-shadow: 1.82px 3.61px 35px #00000014;
+
+                & h4 {
+                    color: #1E2A39;
+                    font-size: 12.88px;
+                    font-weight: 700;
+                    letter-spacing: -1%;
+                }
+
+                & p {
+                    color: #2E2E2E;
+                    font-size: 10.3px;
+                    line-height: 17.17px;
+
+                }
+
+                & .add-btn {
+                    width: 28px;
+                    height: 28px;
+                    background-color: #052A44;
+                    border-radius: 50%;
+                    color: #fff;
+                    font-weight: 600;
+                    font-size: 15px;
+                }
+
+                .members-pics {
+                    height: 23px;
+                }
+            }
+        }
+
+        & .femail-bg {
+            width: 506px;
+            height: 408px;
+            background-color: #E8DB84;
+            border-radius: 20px;
+        }
+
+        & .hero-female {
+            height: 500px;
+            position: absolute;
+            right: -140px;
+            bottom: 65px;
+        }
+    }
+}

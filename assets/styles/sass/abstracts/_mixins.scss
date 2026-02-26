@@ -1,0 +1,18 @@
+@use "variables";
+
+@mixin description {
+    font-family: variables.$main-font;
+    font-size: variables.$paragraph-font-size;
+    font-weight: variables.$paragraph-font-weight;
+}
+
+@mixin primary-button {
+    font-family: variables.$main-font;
+    color: variables.$text-dark;
+    font-size: variables.$paragraph-font-size;
+    font-weight: 600;
+    border-radius: 8px;
+    background-color: variables.$main-color;
+    padding: 15px 43px;
+
+}
