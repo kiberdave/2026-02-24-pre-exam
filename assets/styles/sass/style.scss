@@ -1,15 +1,16 @@
-@use "abstracts/variables";
-@use "abstracts/mixins";
-@use "layouts/reset";
-@use "layouts/header";
-@use "layouts/heroSection";
+@use "abstracts/variables" as *;
+@use "abstracts/mixins" as *;
+@use "layouts/reset" as *;
+@use "layouts/header" as *;
+@use "layouts/heroSection" as *;
+@use "./layouts/aboutSection" as *;
 
 body {
     max-width: 1240px;
     margin: 0 auto;
-    font-family: variables.$main-font;
-    color: variables.$text-light;
-    background-color: variables.$bg-light;
+    font-family: $main-font;
+    color: $text-light;
+    background-color: $bg-light;
     transition: all 0.3s ease;
 }
 
@@ -17,11 +18,11 @@ body {
 // theme switching start
 
 body:has(#dark:checked) {
-    background-color: variables.$bg-dark;
-    color: variables.$text-dark;
+    background-color: $bg-dark;
+    color: $text-dark;
 
     .intro-path {
-        color: variables.$text-dark;
+        color: $text-dark;
     }
 
 }
@@ -49,3 +50,9 @@ main,
 footer {
     padding: 0 24px;
 }
+
+h2 { 
+    font-size: $section-title-size;
+    font-weight: 600; 
+}
+
