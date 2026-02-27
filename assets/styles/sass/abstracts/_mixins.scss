@@ -1,18 +1,24 @@
-@use "variables";
+@use "./variables" as *;
 
 @mixin description {
-    font-family: variables.$main-font;
-    font-size: variables.$paragraph-font-size;
-    font-weight: variables.$paragraph-font-weight;
+    font-family: $main-font;
+    font-size: $paragraph-font-size;
+    font-weight: $paragraph-font-weight;
 }
 
 @mixin primary-button {
-    font-family: variables.$main-font;
-    color: variables.$text-dark;
-    font-size: variables.$paragraph-font-size;
+    font-family: $main-font;
+    color: $text-dark;
+    font-size: $paragraph-font-size;
     font-weight: 600;
     border-radius: 8px;
-    background-color: variables.$main-color;
+    background-color: $main-color;
     padding: 15px 43px;
 
+}
+
+@mixin flex-column-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
