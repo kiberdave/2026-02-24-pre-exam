@@ -6,12 +6,28 @@
 #about {
     @include flex-column-center;
     position: relative;
+    z-index: 1;
+
 
     & .cards {
         display: flex; 
         position: relative;
+        z-index: 2;
         margin-top: 81px;
         gap: 24px;
+
+        &::before {
+            content: "";
+            display: block;
+            position: absolute;
+            width: 129.81px;
+            height: 129.81px;
+            background: url("../../images/about-bg-circle.svg") no-repeat;
+            background-size: contain;
+            left: -30px;
+            bottom: -100px;
+            z-index: -1;
+        }
 
         
         &-item {
@@ -22,6 +38,7 @@
             border-radius: 16px;
             box-shadow: 2px 4px 38px #00000014;
             position: relative;
+            background-color: #fff;
 
             & .card-icon {
                 width: 71px;
@@ -63,13 +80,6 @@
         margin-top: 60px;
     }
 
-    & .about-bg-circle {
-        background-image: url(../../../images/about-bg-circle.svg);
-        background-size: cover;
-        position: absolute;
-        left: -30px;
-        bottom: 20px;
-    }
-
+    
 
 }
